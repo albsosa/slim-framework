@@ -11,7 +11,8 @@ $app->get('/[{name}]', function ($request, $response, $args) {
 
 $app->group('/users/', function(){
 	$this->get('getAll', function ($request, $response, $args) {
-	return "Todos los usuarios";
+		echo '<pre>';
+		print_r($request->getHeaders());
 	});
 	$this->get('get/{id}', function ($request, $response, $args) {
 		return "Obteniendo usuario con ID ".$args['id'];
